@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+
+
+/*custom tailwind classes*/
+
+
+.content h1 {
+  font-size: 3em;
+  font-weight: 500;
+  color: rgb(219, 216, 216);
+}
+
+.content h2 {
+  font-size: 2em;
+  margin: .9rem;
+}
+
+.content h3 {
+  font-size: 1.5em;
+}
+
+.content h4 {
+  font-size: 1.3em;
+}
+
+.content h5 {
+  font-size: 1.2rem;
+}
+
+.content h6 {
+  font-size: 1rem;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+:root {
+  --paragraph-text-size: 18px;
+  --heading-text-size: 24px;
+  --big-heading-text-size: 30px;
+  --line-heght: 25px;
+}
+
+* {
+
+  box-shadow: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+/* 
+h3{
+  user-select: none;
+  pointer-events: none;
+} */
+
+.none {
+  outline: none;
+}
+
+html {
+  transition: all 1s ease;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  color: #b8b8b8;
+}
+
+input {
+  outline: none;
+}
+
+
+
+
+
+
+
+.para-text {
+  font-size: var(--paragraph-text-size);
+  line-height: var(--line-heght);
+}
+
+.heading-text {
+  font-size: var(--heading-text-size);
+  line-height: var(--line-heght);
+  margin: .5rem;
+}
+
+.big-heading-text {
+  font-size: var(--big-heading-text-size);
+  line-height: var(--line-heght);
+  font-weight: 600;
+  margin: 2rem;
+  transform: translateX(-1rem);
+}
+
+body {
+  background-color: #16171f;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  /* border: none; */
+  height: 100vh;
+
+}
+
+.container {
+  height: 100vh;
+}
+
+.card {
+  background: #18181a;
+  width: 257px;
+  height: 205px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem;
+  transition: all .2s ease;
+  border-radius: 10px;
+  border: 2px solid rgb(85, 85, 85);
+
+}
+
+.card:hover {
+  box-shadow: 0px 0px 5px 4px rgba(172, 236, 245, 0.75);
+}
+
+.over {
+  overflow: scroll;
+}
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+  display: none;
+}
+
+
