@@ -32,7 +32,6 @@ export default function App({
         content: ``,
     });
     const initailData = useRef()
-    const initailChapter = useRef()
     const router = useRouter()
 
 
@@ -53,14 +52,14 @@ export default function App({
         //    setFormState({...formState,topic:params.name})
         setFormState({ ...formState, chapter: value })
 
-        console.log(formState)
+        // console.log(formState)
 
     }
 
 
     function handleEditorContent(content: string) {
         setFormState({ ...formState, content: content })
-        console.log(formState)
+        // console.log(formState)
 
     }
 
@@ -114,7 +113,7 @@ export default function App({
             .then(response => response.json())
             .then(data => {
 
-                console.log(data)
+                // console.log(data)
                 if (data.status != 200) {
                     setwarningDialog(prev => ({ ...prev, status: true, message: data.message, type: "Warning" }))
                     return
@@ -135,7 +134,7 @@ export default function App({
         console.log(params.name)
         console.log(params.name.length)
         if (params.name[1] == "undefined") {
-            console.log('in the first blxik')
+            // console.log('in the first blxik')
             router.push(`/addChapter/${params.name[0]}`)
             return
         }
@@ -144,7 +143,7 @@ export default function App({
             fetch(`/api/contentManageApi?topic=${params.name[0]}&urlname=${params.name[1]}`)
                 .then(res => res.json())
                 .then(content => {
-                    console.log(content)
+                    // console.log(content)
 
 
                     initailData.current = content.data.content;
