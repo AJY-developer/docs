@@ -170,7 +170,7 @@ export default function App({
                 <input name="urlname" type="text" onChange={handleTopicContent} value={formState.chapter} placeholder='Chapter-Name' className='outline-none p-2 rounded bg-slate-800' />
 
                 <Editor
-                    apiKey='jgz9mstpuy8xqt193drgcdb3y93betfbx2pnub00h7z84fzm'
+                    apiKey='7lg7txdm1ebyc9cgn85qke7zicr120qhs682wpfnq31c5j40'
 
                     init={{
                         skin: 'oxide-dark',
