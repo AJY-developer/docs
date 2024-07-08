@@ -1,6 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/api/contentManageApi/route": "app/api/contentManageApi/route.js",
-  "/maindata/[[...slug]]/page": "app/maindata/[[...slug]]/page.js",
-  "/(add)/addChapter/[[...name]]/page": "app/(add)/addChapter/[[...name]]/page.js"
-}
