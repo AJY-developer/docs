@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import DocsChapter from "@/app/components/DocsChapter";
+import DocsChapter from "@/app/components/docsComponents/DocsChapter";
 // import { ReactElement, JSXElementConstructor, ReactNode, AwaitedReactNode, Key } from "react";
 
 

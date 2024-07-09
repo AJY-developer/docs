@@ -1,12 +1,13 @@
 "use client"
 
-import DocsData from "@/app/components/DocsData";
-import DocsLoading from "@/app/components/DocsLoading";
+import DocsData from "@/app/components/docsComponents/DocsData";
+import DocsLoading from "@/app/components/docsComponents/DocsLoading";
 import DeleteDialog from "@/app/components/WarningDialog";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setTimeout } from "timers";
+import Adminaccess from "@/app/components/adminComponents/AdminDelEdit";
 
 interface content {
   content: string | null
@@ -27,6 +28,7 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
   const router = useRouter()
   const [contentData, setcontentData] = useState<content>()
   const [isdatacome, setdatacome] = useState(false)
+  const [isadmin, setadmin] = useState(false)
 
 
   const [warningDialog, setwarningDialog] = useState<delDialog>({
@@ -142,22 +144,8 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
 
           <DocsData data={contentData} />
 
-          <div className="actions text-center mb-20">
-            <Link
-
-              href={`/addChapter/${params.slug[0]}/${params.slug[1]}`}
-            >
-              <button className="btn btn-accent btn-outline px-10">
-                Edit
-              </button>
-            </Link>
-
-            <button
-              className="btn border-2 border-red-600 hover:bg-red-600 hover:text-slate-900  px-8 text-red-600"
-              onClick={deleteRecord}
-            >Delete</button>
-
-          </div>
+         
+          {isadmin ? <Adminaccess params={params} deleteRecord={deleteRecord} /> : ''}
 
           {isdatacome ? <DocsLoading /> : ''}
 
