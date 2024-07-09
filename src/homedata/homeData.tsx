@@ -46,6 +46,14 @@ const data: allData[] = [
 
         ]
     },
+    {
+        category: "other",
+        card_data: [
+            { topic_image: "/images/auth.png", topic_name: "auth" },
+           
+
+        ]
+    },
 ]
 
 export default data;
