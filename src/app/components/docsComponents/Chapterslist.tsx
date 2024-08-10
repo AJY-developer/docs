@@ -22,7 +22,7 @@ export default async function Chapterslist({
 }) {
 
 const pathname = usePathname()
-const [isadmin, setadmin] = useState(false)
+const [isadmin, setadmin] = useState(true)
 const urlarray = pathname.split('/')
 
 

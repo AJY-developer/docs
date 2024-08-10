@@ -15,11 +15,12 @@ datasource db {
 
 model Chapter {
   id      Int     @id @default(autoincrement())
-  chapter String  @unique
+  chapter String
   content String?
   topic   String
-  urlname String  @unique
+  urlname String
 
   @@unique([urlname, topic])
+  @@unique([chapter, topic])
   @@index([urlname, topic])
 }

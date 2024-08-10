@@ -20,6 +20,7 @@ const data: allData[] = [
             { topic_image: "/images/expressjs.png", topic_name: "ExpressJs" },
             { topic_image: "/images/prisma.png", topic_name: "Prisma" },
             { topic_image: "/images/mongoose.png", topic_name: "Mongoose" },
+            { topic_image: "https://zod.dev/logo.svg", topic_name: "zod" },
 
         ]
     },

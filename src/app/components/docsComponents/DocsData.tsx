@@ -22,7 +22,7 @@ export default function DocsData({ data }: { data: { content: string |null} }) {
     <div className="p-6 text-white">
       {data && data.content ? (
         // Use dangerouslySetInnerHTML to render HTML content with syntax highlighting
-        <div dangerouslySetInnerHTML={{ __html: data.content}} />
+        <div dangerouslySetInnerHTML={{ __html: data.content}} className="leading-relaxed"/>
       ) : (
         <h3>Data not added</h3>
       )}

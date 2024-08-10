@@ -9,13 +9,14 @@ import prisma from "@/DB/prisma";
 export async function POST(request: NextRequest) {
 
 
-  const { content, chapter, topic } = await request.json();
+  let { content, chapter, topic } = await request.json();
 
 
 
 
   try {
 
+    chapter = chapter.toLowerCase().trim()
     const urlname = chapter.replace(/ /g, "-");
 
     const checkIfAlreadyExit = await prisma.chapter.findFirst({
@@ -52,12 +53,7 @@ export async function POST(request: NextRequest) {
 
 
 
-
-
-
 export async function GET(request: NextRequest) {
-
-
 
   try {
     const params = request.nextUrl.searchParams
@@ -74,7 +70,8 @@ export async function GET(request: NextRequest) {
         } as any,
         select: {
           content: true,
-          chapter: true
+          chapter: true,
+          urlname:true,
         }
       })
 
@@ -95,8 +92,10 @@ export async function GET(request: NextRequest) {
 
     const content = await prisma.chapter.findUnique({
       where: {
-        topic: topic,
-        urlname: urlname
+        urlname_topic:{
+          topic: topic,
+          urlname: urlname
+        }
       },
       select: {
         content: true,

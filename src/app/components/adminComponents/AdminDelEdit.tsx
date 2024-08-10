@@ -7,6 +7,8 @@ interface adminParam {
 }
 
 export default function Adminaccess({ params, deleteRecord }:adminParam) {
+
+  console.log(params)
   return (
     <div className="actions text-center mb-20">
       <Link
