@@ -21,6 +21,7 @@ const data: allData[] = [
             { topic_image: "/images/prisma.png", topic_name: "Prisma" },
             { topic_image: "/images/mongoose.png", topic_name: "Mongoose" },
             { topic_image: "https://zod.dev/logo.svg", topic_name: "zod" },
+            { topic_image: "/images/auth.png", topic_name: "next-auth" },
 
         ]
     },
@@ -44,14 +45,6 @@ const data: allData[] = [
         card_data: [
             { topic_image: "/images/docker.png", topic_name: "docker" },
             { topic_image: "/images/git.png", topic_name: "git" },
-
-        ]
-    },
-    {
-        category: "other",
-        card_data: [
-            { topic_image: "/images/auth.png", topic_name: "auth" },
-           
 
         ]
     },
