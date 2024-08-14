@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 
+import "../componentsStyle/doc.style.css"
+
 export default function DocsData({ data }: { data: { content: string |null} }) {
   useEffect(() => {
     // Run Prism.js syntax highlighting after component has mounted
@@ -22,7 +24,7 @@ export default function DocsData({ data }: { data: { content: string |null} }) {
     <div className="p-6 text-white">
       {data && data.content ? (
         // Use dangerouslySetInnerHTML to render HTML content with syntax highlighting
-        <div dangerouslySetInnerHTML={{ __html: data.content}} className="leading-relaxed"/>
+        <div dangerouslySetInnerHTML={{ __html: data.content}} className="leading-relaxed chatper-data"/>
       ) : (
         <h3>Data not added</h3>
       )}

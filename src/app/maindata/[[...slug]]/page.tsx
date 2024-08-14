@@ -4,7 +4,6 @@ import DocsData from "@/app/components/docsComponents/DocsData";
 import DocsLoading from "@/app/components/docsComponents/DocsLoading";
 import DeleteDialog from "@/app/components/WarningDialog";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setTimeout } from "timers";
 import Adminaccess from "@/app/components/adminComponents/AdminDelEdit";
@@ -29,7 +28,7 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
   const [contentData, setcontentData] = useState<content>()
   const [isdatacome, setdatacome] = useState(false)
   const [isloading, setLoading] = useState(false)
-  const [isadmin, setadmin] = useState(true)
+  const [isadmin, setadmin] = useState(false)
 
 
   const [warningDialog, setwarningDialog] = useState<delDialog>({
