@@ -1,26 +1,68 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Chapter {
-  id      Int     @id @default(autoincrement())
-  chapter String
-  content String?
-  topic   String
-  urlname String
+generator client {
+  provider = "prisma-client-js"
+}
 
-  @@unique([urlname, topic])
-  @@unique([chapter, topic])
-  @@index([urlname, topic])
+model User {
+  id         String     @id @default(uuid())
+  username   String     @unique
+  email      String     @unique
+  password   String
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  categories Category[]
+  topics     Topic[]
+  chapters   Chapter[]
+  contents   Content[]
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  name      String
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+  topics    Topic[]
+
+  @@unique([userId, name])
+}
+
+model Topic {
+  id         String    @id @default(uuid())
+  name       String
+  categoryId String
+  userId     String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  category   Category  @relation(fields: [categoryId], references: [id])
+  user       User      @relation(fields: [userId], references: [id])
+  chapters   Chapter[]
+}
+
+model Chapter {
+  id        String    @id @default(uuid())
+  name      String
+  topicId   String
+  userId    String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  topic     Topic     @relation(fields: [topicId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
+  contents  Content[]
+}
+
+model Content {
+  id        String   @id @default(uuid())
+  text      String
+  chapterId String
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  chapter   Chapter  @relation(fields: [chapterId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
 }

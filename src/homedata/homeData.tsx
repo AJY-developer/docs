@@ -17,6 +17,7 @@ const data: allData[] = [
         category: "Library",
         card_data: [
             { topic_image: "/images/react.png", topic_name: "React" },
+            { topic_image: "/images/vuejs.png", topic_name: "VueJs" },
             { topic_image: "/images/expressjs.png", topic_name: "ExpressJs" },
             { topic_image: "/images/prisma.png", topic_name: "Prisma" },
             { topic_image: "/images/mongoose.png", topic_name: "Mongoose" },
