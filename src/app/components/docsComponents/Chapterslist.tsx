@@ -14,7 +14,7 @@ interface data {
     id: number
 }
 
-export default async function Chapterslist({
+export default function Chapterslist({
     data, contentData
 }: {
     contentData: data[]
@@ -22,7 +22,7 @@ export default async function Chapterslist({
 }) {
 
 const pathname = usePathname()
-const [isadmin, setadmin] = useState(true)
+const [isadmin, setadmin] = useState(false)
 const urlarray = pathname.split('/')
 
 
