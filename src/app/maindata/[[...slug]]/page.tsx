@@ -28,7 +28,7 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
   const [contentData, setcontentData] = useState<content>()
   const [isdatacome, setdatacome] = useState(false)
   const [isloading, setLoading] = useState(false)
-  const [isadmin, setadmin] = useState(false)
+  const [isadmin, setadmin] = useState(true)
 
 
   const [warningDialog, setwarningDialog] = useState<delDialog>({
@@ -136,12 +136,6 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
 
    
 
-
-
-
-    // router.refresh()
-
-
   }, [])
 
 
@@ -150,7 +144,7 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
     return (
       <>
 
-        <div className=" relative">
+        <div className=" relative pb-20">
 
           <DocsData data={contentData} />
 
@@ -175,7 +169,7 @@ export default function MainData({ params }: { params: { slug: string[] } }) {
     return (
       <>
 
-        <div className="relative">
+        <div className="relative pb-20">
 
 
           <p>No Data Added</p>
