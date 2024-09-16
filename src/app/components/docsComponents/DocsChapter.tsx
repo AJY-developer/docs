@@ -49,6 +49,9 @@ export default async function DocsChapter({ data }: {
     }
 
 
+    console.log("chapter-List",contentData)
+
+
 
     return (
 

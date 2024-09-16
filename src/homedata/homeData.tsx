@@ -53,8 +53,6 @@ const data: allData[] = [
         category: "Services",
         card_data: [
             { topic_image: "/images/cloudinary.png", topic_name: "cloudinary" },
-           
-
         ]
     },
 ]

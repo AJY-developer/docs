@@ -131,8 +131,8 @@ export default function App({
 
     useEffect(() => {
 
-        console.log(params.name)
-        console.log(params.name.length)
+        // console.log(params.name)
+        // console.log(params.name.length)
         if (params.name[1] == "undefined") {
             // console.log('in the first blxik')
             router.push(`/addChapter/${params.name[0]}`)
@@ -170,7 +170,7 @@ export default function App({
                 <input name="urlname" type="text" onChange={handleTopicContent} value={formState.chapter} placeholder='Chapter-Name' className='outline-none p-2 rounded bg-slate-800' />
 
                 <Editor
-                    apiKey='g47kvvcm0dpzjhm8zrau17wibbdvlww2xk7l9xbt35r53ty9'
+                    apiKey='39b12l0965zmutmy80dravqqfyaoygqarhgfkgj44k6i7i03'
 
                     init={{
                         skin: 'oxide-dark',
